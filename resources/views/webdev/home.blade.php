@@ -34,7 +34,7 @@
 
                     @php ($i = 1)
                     @foreach($webdevs as $webdev) 
-                    <form action="/webdev/{{$webdev->id}}" method="POST">
+                    
                         <tr>
                             <td>{{ $i }}</td>
                             <td>{{ $webdev->nama }}</td>
@@ -42,14 +42,18 @@
                             <td>{{ $webdev->line_id }}</td>
                             <td>{{ $webdev->nope }}</td>
                             <td>{{ $webdev->minat }}</td>
-                            <td><a href="/webdev/{{$webdev->id}}/edit"><i class="glyphicon glyphicon-pencil"></i></a>   
+                            <td style="width: 150px"><a href="/webdev/{{$webdev->id}}/edit"><button class="btn btn-success"><i class="glyphicon glyphicon-pencil"></i></button></a>   
                                 
-                                    <button type="submit" name="submit" class="btn btn-link"> <i class="glyphicon glyphicon-trash"></i></button>
+                               
+                                <form action="/webdev/{{$webdev->id}}" method="POST">
+
+                                    <button type="submit" name="submit" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i></button>
                                     {{csrf_field()}}
-                                    <input type="hidden" name="_method" value="DELETE">
-                                
+                                    <input type="hidden" name="_method" value="DELETE"></td>
+                                </form>
+                               
                                </tr>
-                            </form>
+                            
                               
 
                         @php( $i++ )

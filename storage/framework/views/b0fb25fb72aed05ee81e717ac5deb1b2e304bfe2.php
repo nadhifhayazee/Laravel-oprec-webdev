@@ -32,7 +32,7 @@
 
                     <?php ($i = 1); ?>
                     <?php $__currentLoopData = $webdevs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $webdev): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                    <form action="/webdev/<?php echo e($webdev->id); ?>" method="POST">
+                    
                         <tr>
                             <td><?php echo e($i); ?></td>
                             <td><?php echo e($webdev->nama); ?></td>
@@ -40,15 +40,19 @@
                             <td><?php echo e($webdev->line_id); ?></td>
                             <td><?php echo e($webdev->nope); ?></td>
                             <td><?php echo e($webdev->minat); ?></td>
-                            <td><a href="/webdev/<?php echo e($webdev->id); ?>/edit"><i class="glyphicon glyphicon-pencil"></i></a>   
+                            <td style="width: 150px"><a href="/webdev/<?php echo e($webdev->id); ?>/edit"><button class="btn btn-success"><i class="glyphicon glyphicon-pencil"></i></button></a>   
                                 
-                                    <button type="submit" name="submit" class="btn btn-link"> <i class="glyphicon glyphicon-trash"></i></button>
+                               
+                                <form action="/webdev/<?php echo e($webdev->id); ?>" method="POST">
+
+                                    <button type="submit" name="submit" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i></button>
                                     <?php echo e(csrf_field()); ?>
 
-                                    <input type="hidden" name="_method" value="DELETE">
-                                
+                                    <input type="hidden" name="_method" value="DELETE"></td>
+                                </form>
+                               
                                </tr>
-                            </form>
+                            
                               
 
                         <?php ( $i++ ); ?>

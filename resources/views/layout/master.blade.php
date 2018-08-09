@@ -12,7 +12,7 @@
 
     <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <title>Webde Open Recruitment</title>
+    <title>Webdev Open Recruitment</title>
 </head>
 
 <body>

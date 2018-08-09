@@ -79,3 +79,12 @@ footer ul li {
 .formulir button{
     margin-top: 20px;
 }
+
+.tabel ul li{
+    list-style: none;
+    display: inline;
+}
+
+/* table {
+    line-height: 50%;
+} */
